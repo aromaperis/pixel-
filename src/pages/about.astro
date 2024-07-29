@@ -1,5 +1,15 @@
 ---
-
+const about = "Get to know us"
+const pagetitle ="PixelsPalette"
+const me = {
+	name: "PixelsPalette",
+	author : "Aroma P",
+	hobbies: ["photography", "birdwatching", "baseball"]
+};
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -8,19 +18,37 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>PixelsPalette</title>
+		<title>{pagetitle}</title>
 	</head>
 	<body>
-        <h1>PixelsPalette </h1>
-
+        <h1>{pagetitle} </h1>
+        
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
 
 
-		<h1>About</h1>
+		<h2> {about}</h2>
         <p>PixelsPalette dives into the aspects of ones life. We all deal with various situations every single day, but we are less aware that these situations are already dealt by someone whose solutions exist. They are either never spoken about or pened down by authors or poets as their art.
             We shall not be surprised if this happens to us. Hence PixelsPalette.
         </p>
+        <p>Here are a few facts about me:</p>
+<ul>
+  <li>We are {me.name}.</li>
+  <li>Your author is {me.author}.</li>
+  {me.hobbies.length >= 2 &&
+    <li>Two of my hobbies are: {me.hobbies[0]} and {me.hobbies[1]}</li>
+  }
+</ul>
+<p>My skills are:</p>
+<ul>
+  {skills.map((skill) => <li>{skill}</li>)}
+</ul>
+
+{happy && <p>I am happy to be learning Astro!</p>}
+
+{finished && <p>I finished this tutorial!</p>}
+
+{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 	</body>
 </html>

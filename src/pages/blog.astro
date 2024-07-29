@@ -1,5 +1,6 @@
 ---
-
+const pagetitle ="PixelsPalette"
+const blog = "My Astro Blog"
 ---
 
 <html lang="en">
@@ -8,18 +9,21 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>PixelsPalette</title>
+		<title>{pagetitle}</title>
 	</head>
 	<body>
-        <h1>PixelsPalette </h1>
+        <h1>{pagetitle} </h1>
 
 		<a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
  
-        <h1>FOR NOW</h1>
+        <h1>{blog}</h1>
         <p>This is where I will post about my journey learning Astro.</p>
-         
-		
+        <ul>
+			<li><a href="/posts/post1"> Do read it</a></li>
+			<li><a href="/posts/post2/">Post 2</a></li>
+			<li><a href="/posts/post3/">Post 3</a></li>
+	    </ul> 
 	</body>
 </html>
