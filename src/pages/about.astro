@@ -1,4 +1,8 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
 const about = "Get to know us"
 const pagetitle ="PixelsPalette"
 const me = {
@@ -10,6 +14,10 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const textCase = "uppercase";
+const fontWeight = "bold";
 ---
 
 <html lang="en">
@@ -20,15 +28,15 @@ const goal = 3;
 		<meta name="generator" content={Astro.generator} />
 		<title>{pagetitle}</title>
 
-    <style>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
       h1 {
         color: purple;
         font-size: 4rem;
       }
-
       .skill {
-    color: green;
-    font-weight: bold;
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
       }
     </style>
  
@@ -36,9 +44,7 @@ const goal = 3;
 	<body>
         <h1>{pagetitle} </h1>
         
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
+       <Navigation />
 
 
 		<h2> {about}</h2>
@@ -63,5 +69,8 @@ const goal = 3;
 {finished && <p>I finished this tutorial!</p>}
 
 {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+
+<Footer />
+ 
 	</body>
 </html>

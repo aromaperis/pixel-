@@ -1,4 +1,6 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 const pagetitle ="PixelsPalette"
 ---
 
@@ -13,9 +15,8 @@ const pagetitle ="PixelsPalette"
 	<body>
         <h1>{pagetitle} </h1>
 
-		<a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
+		<Navigation />
+		<Footer />
 		
 		
 	</body>
