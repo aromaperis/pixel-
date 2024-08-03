@@ -1,7 +1,8 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../layouts/layout.astro';
+
 import '../styles/global.css';
+const desc = "About Us";
 
 const about = "Get to know us"
 const pagetitle ="PixelsPalette"
@@ -42,10 +43,7 @@ const fontWeight = "bold";
  
 	</head>
 	<body>
-        <h1>{pagetitle} </h1>
-        
-       <Header />
-
+      <Layout desc = {desc} />
 
 		<h2> {about}</h2>
         <p>PixelsPalette dives into the aspects of ones life. We all deal with various situations every single day, but we are less aware that these situations are already dealt by someone whose solutions exist. They are either never spoken about or pened down by authors or poets as their art.
@@ -70,7 +68,6 @@ const fontWeight = "bold";
 
 {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 
-<Footer />
- 
+</Layout>
 	</body>
 </html>

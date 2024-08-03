@@ -1,4 +1,5 @@
 ---
+layout : ../../layouts/Markdownlayout.astro
 title: My Third Blog Post
 author: Aroma P
 description: "I had some challenges, but asking in the community really helped!"

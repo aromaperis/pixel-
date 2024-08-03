@@ -1,6 +1,5 @@
 ---
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../layouts/layout.astro';
 import '../styles/global.css';
 const pagetitle ="PixelsPalette"
 const blog = "My Astro Blog"
@@ -15,9 +14,7 @@ const blog = "My Astro Blog"
 		<title>{pagetitle}</title>
 	</head>
 	<body>
-        <h1>{pagetitle} </h1>
-
-		<Navigation />
+        <Layout desc = "Blog">
 		
         <h1>{blog}</h1>
         <p>This is where I will post about my journey learning Astro.</p>
@@ -27,7 +24,7 @@ const blog = "My Astro Blog"
 			<li><a href="/posts/post3/">Post 3</a></li>
 	    </ul> 
 	
-		<Footer />
+	</Layout>
  
 	</body>
 </html>
