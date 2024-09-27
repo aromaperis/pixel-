@@ -3,6 +3,7 @@ import Layout from '../layouts/layout.astro';
 import '../styles/global.css';
 const pagetitle ="PixelsPalette"
 const blog = "My Astro Blog"
+const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 
 <html lang="en">
@@ -19,9 +20,7 @@ const blog = "My Astro Blog"
         <h1>{blog}</h1>
         <p>This is where I will post about my journey learning Astro.</p>
         <ul>
-			<li><a href="/posts/post1"> Do read it</a></li>
-			<li><a href="/posts/post2/">Post 2</a></li>
-			<li><a href="/posts/post3/">Post 3</a></li>
+			{allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
 	    </ul> 
 	
 	</Layout>
